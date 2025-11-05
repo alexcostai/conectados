@@ -1,0 +1,88 @@
+﻿.custom-auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100dvh;
+    background: var(--main-light-color);
+}
+
+.custom-auth-card {
+    border-radius: 20px;
+    padding: 20px;
+    padding-block: 15px;
+    background: white;
+    width: 90%;
+    max-width: 500px;
+}
+
+.custom-form-input {
+    width: 100%;
+    border-radius: 18px;
+    background: #e6e6e6;
+    padding: 10px;
+    padding-inline: 15px;
+    border-width: 0;
+}
+
+.custom-input-label {
+    font-weight: 600;
+    margin: 0px;
+    font-size: 16px;
+}
+
+.custom-auth-card h4 {
+    font-weight: 700;
+}
+
+.custom-button {
+    border-width: 0px;
+    border-radius: 20px;
+    background: var(--main-color);
+    color: white;
+    padding: 12px;
+    width: 70%;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+    .custom-button:hover {
+        background: var(--main-dark-color);
+    }
+
+a {
+    text-decoration: inherit;
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+    a:hover {
+        color: var(--main-dark-color);
+    }
+
+.custom-auth-footer-action {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-error-text {
+    color: #c82727;
+    text-align: center;
+}
+
+.form-check-input:hover {
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+@media (max-width: 400px) {
+    .custom-auth-footer-action {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

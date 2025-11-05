@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model conectados.ViewModels.LoginUserDTO;
+@{
+    Layout = "_EmptyLayout";
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/auth-styles.css" asp-append-version="true" />
+}
+
+
+<main class="custom-auth-container">
+    <section class="custom-auth-card">
+        <h4>Inicia Sesión</h4>
+        <div class="mt-3">
+            <form method="post" asp-controller="Auth" asp-action="Login">
+                <fieldset class="d-flex flex-column gap-1 mb-4">
+                    <div>
+                        <label class="custom-input-label" for="Email">Email</label>
+                        <input class="custom-form-input" id="Email" type="email" placeholder="example@email.com" required asp-for="Email" />
+                    </div>
+                    <div>
+                        <label class="custom-input-label" for="Password">Contraseña</label>
+                        <input class="custom-form-input" id="Password" type="password" placeholder="******" required asp-for="Password" />
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="SaveSession" asp-for="SaveSession">
+                        <label class="form-check-label" for="SaveSession">
+                            ¿Guardar Sesión?
+                        </label>
+                    </div>
+                </fieldset>
+
+
+                @if (ViewData["ErrorMessage"] != null)
+                {
+                    <p class="custom-error-text mb-1" role="alert">@ViewData["ErrorMessage"]</p>
+                }
+                <div class="d-flex justify-content-center">
+                    <button class="custom-button" type="submit">Ingresar</button>
+                </div>
+
+                <p class="custom-auth-footer-action">
+                    ¿Aún no estas registrado? <a asp-controller="Auth" asp-action="Register" class="ms-1">Registrarse Ahora</a>
+                </p>
+            </form>
+        </div>
+    </section>
+</main>
